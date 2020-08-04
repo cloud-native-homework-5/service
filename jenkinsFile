@@ -15,7 +15,7 @@ pipeline {
                 echo 'Maven Test Stage'
                 sh 'cd service && mvn -B clean test'
                 echo 'Maven Build Stage'
-                sh 'cd service && mvn package'
+                sh 'cd service && mvn package -Dmaven.test.skip=true'
             }
 	    }
         stage('Image Build'){
