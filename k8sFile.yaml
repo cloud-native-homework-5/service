@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: service
+  name: service
+  namespace: cn202005
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service
+  template:
+    metadata:
+      labels:
+        app: service
+    spec:
+      containers:
+      - image: harbor.edu.cn/cn202005/service:0.0.0
+        imagePullPolicy: Always
+        name: service
+      imagePullSecrets:
+      - name: cn202005
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: service
+  name: service
+  namespace: cn202005
+spec:
+  ports:
+  - name: service
+    nodePort: 36000
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: service
+  type: NodePort
