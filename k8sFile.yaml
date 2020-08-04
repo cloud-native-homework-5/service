@@ -33,7 +33,7 @@ metadata:
 spec:
   ports:
   - name: service
-    nodePort: 36000
+    nodePort: 36001
     port: 8080
     protocol: TCP
     targetPort: 8080

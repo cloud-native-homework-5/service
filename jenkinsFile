@@ -2,8 +2,16 @@ def tag = '1.0.0'
 
 pipeline {
     agent none
-
     stages {
+        stage('Clone to master') {
+            agent {
+                label 'master'
+            }
+            steps {
+                echo "Git Clone Stage"
+                git url: "https://github.com/cloud-native-homework-5/service.git"
+            }
+        }
         stage('Maven Build and Test') {
             agent{
                 docker {
