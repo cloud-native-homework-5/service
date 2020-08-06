@@ -1,5 +1,17 @@
+
 server:
   port: 8999
 
 msg: Hello world!
 
+spring:
+  application:
+    name: cn202005_service
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  metrics:
+    tags:
+      application: ${spring.application.name}
