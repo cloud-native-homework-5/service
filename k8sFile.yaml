@@ -16,7 +16,7 @@ spec:
         app: service
     spec:
       containers:
-      - image: harbor.edu.cn/cn202005/service:0.0.0
+      - image: harbor.edu.cn/cn202005/service:0.0.1
         imagePullPolicy: Always
         name: service
       imagePullSecrets:
