@@ -17,7 +17,8 @@ spec:
       annotations:
         prometheus.io/scrape: "true"
         prometheus.io/port: "8999"
-        prometheus.io/path: /mertrics
+        prometheus.io/scheme: http
+        prometheus.io/path: /actuator/prometheus
     spec:
       containers:
       - image: harbor.edu.cn/cn202005/service:1.0.0
