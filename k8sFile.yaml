@@ -14,6 +14,10 @@ spec:
     metadata:
       labels:
         app: service
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9999"
+        prometheus.io/path: /internal/metrics
     spec:
       containers:
       - image: harbor.edu.cn/cn202005/service:1.0.0
