@@ -15,8 +15,8 @@ spec:
       labels:
         app: service
       annotations:
-        prometheus.io/scrape: "true"
-        prometheus.io/port: "36001"
+        prometheus.io/scrape: true
+        prometheus.io/port: 8080
         prometheus.io/path: /internal/metrics
     spec:
       containers:
