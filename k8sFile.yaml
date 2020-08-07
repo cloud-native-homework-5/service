@@ -17,7 +17,7 @@ spec:
       annotations:
         prometheus.io/scrape: "true"
         prometheus.io/port: "8080"
-        prometheus.io/path: /internal/metrics
+        prometheus.io/path: /metrics
     spec:
       containers:
       - image: harbor.edu.cn/cn202005/service:1.0.0
